@@ -1,0 +1,351 @@
+// GOOGLE FONTS
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+// VARIABLES
+// Colors
+// primary colors
+$linear_gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); //active input border
+$red: hsl(0, 100%, 66%); //(input errors)
+// neutral colors
+$white: hsl(0, 0%, 100%);
+$light_grayish_violet: hsl(270, 3%, 87%);
+$dark_grayish_violet: hsl(279, 6%, 55%);
+$very_dark_violet: hsl(278, 68%, 11%);
+$light_violet: lighten($very_dark_violet, 10%);
+// Typography
+// font-family
+$ff: "Space Grotesk", sans-serif;
+// font-weight
+$fw_medium: 500;
+// font-size
+$fs_bodyCopy: 1.125rem;
+// Breakpoints
+$mobile: 640px;
+$tablet: 768px;
+$xl_tablet: 960px;
+$desktop: 1024px;
+// RESET
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+fieldset {
+  border: none;
+}
+
+//Toggle
+
+.hide {
+  display: none;
+}
+
+// STYLES
+body {
+  font-family: $ff;
+  font-size: $fs_bodyCopy;
+  background-color: $white;
+  width: 100%;
+  height: 240px;
+  background-image: url(../images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100% 240px;
+  @media screen and (min-width: $desktop) {
+    background-image: url(../images/bg-main-desktop.png);
+    background-size: 480px 100%;
+  }
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+.card_container {
+  height: 158px;
+  width: 285px;
+  top: 30px;
+  right: 15px;
+  position: absolute;
+  @media screen and (min-width: $desktop) {
+    height: 250px;
+    width: 450px;
+    top: 200px;
+    right: 1000px;
+  }
+}
+
+.card_container > .back_card,
+.front_card {
+  border-radius: 8px;
+  width: 285px;
+  @media screen and (min-width: $desktop) {
+    width: 450px;
+    border-radius: 11px;
+  }
+}
+
+.back_card {
+  position: relative;
+  @media screen and (min-width: $desktop) {
+    bottom: -125%;
+    left: 30%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  }
+}
+
+.front_card_container {
+  // Logo
+  &::after {
+    content: url(../images/card-logo.svg);
+    position: absolute;
+    top: 95px;
+    left: -55px;
+    transform: scale(0.6);
+    @media screen and (min-width: $desktop) {
+      top: 20%;
+      left: 15%;
+      transform: scale(1);
+    }
+  }
+}
+
+.front_card {
+  position: absolute;
+  top: 89px;
+  right: 53px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  @media screen and (min-width: $desktop) {
+    top: 10%;
+    left: 40px;
+  }
+}
+
+.details {
+  color: $white;
+  font-size: 12px;
+  position: absolute;
+  letter-spacing: 1px;
+}
+
+.cvc {
+  top: 70px;
+  left: 225px;
+  font-size: 10px;
+  @media screen and (min-width: $desktop) {
+    top: 425px;
+    left: 495px;
+    font-size: 13px;
+  }
+}
+
+.cardnumber {
+  top: 170px;
+  left: -18px;
+  font-size: $fs_bodyCopy;
+
+  @media screen and (min-width: $desktop) {
+    top: 150px;
+    left: 88px;
+    font-size: 30px;
+  }
+}
+
+.cardname {
+  top: 215px;
+  left: -18px;
+  text-transform: uppercase;
+  font-size: 9px;
+  @media screen and (min-width: $desktop) {
+    left: 92px;
+    font-size: 13px;
+  }
+}
+
+.expdate {
+  top: 215px;
+  left: 168px;
+  font-size: 9px;
+  p {
+    display: inline-block;
+  }
+  @media screen and (min-width: $desktop) {
+    left: 394px;
+    font-size: 13px;
+  }
+}
+// FORM
+.cardform {
+  width: 325px;
+  margin-top: 330px;
+  @media screen and (min-width: $desktop) {
+    margin-left: 35%;
+    margin-top: 300px;
+    width: 400px;
+  }
+}
+
+.box1,
+.box2,
+.box3 {
+  display: flex;
+}
+
+.box1 {
+  flex-direction: column;
+}
+
+.box2 {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.box3 {
+  flex-direction: column;
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 10px;
+  }
+}
+
+#expmonth,
+#expyear {
+  width: 65px;
+  @media screen and (min-width: $desktop) {
+    width: 75px;
+  }
+}
+#cvc {
+  width: 170px;
+  @media screen and (min-width: $desktop) {
+    width: 210px;
+  }
+}
+
+label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  color: $very_dark_violet;
+  font-weight: bold;
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+}
+
+input {
+  font-size: $fs_bodyCopy;
+  margin-bottom: 7px;
+  border-radius: 8px;
+  padding: 10px;
+  display: block;
+  width: 100%;
+  border: 1px solid $light_grayish_violet;
+  color: $dark_grayish_violet;
+}
+
+.errorMessage {
+  display: block;
+  color: $red;
+  text-align: left;
+  font-size: 0.65rem;
+  margin-bottom: 20px;
+  @media screen and (min-width: $desktop) {
+    font-size: 0.75rem;
+  }
+}
+
+input:focus {
+  border: $dark_grayish_violet solid 2px;
+  outline: none;
+}
+
+.error input {
+  border: 1px solid $red;
+}
+
+// Makes the Error Message invisible
+.errorMessage {
+  opacity: 0;
+}
+// Makes the Error Message visible
+.error .errorMessage {
+  opacity: 1;
+}
+
+.confirm_button,
+.continue_button {
+  width: 100%;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  color: $white;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  background-color: $very_dark_violet;
+  cursor: pointer;
+  &:hover {
+    background-color: $light_violet;
+  }
+  &:active {
+    transform: translateY(4px);
+  }
+}
+.completionMessage {
+  width: 325px;
+  margin-top: 330px;
+  text-align: center;
+  img {
+    margin-bottom: 30px;
+  }
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: $fw_medium;
+    color: $very_dark_violet;
+    margin-bottom: 15px;
+  }
+  p {
+    color: $dark_grayish_violet;
+    font-size: 17px;
+    margin-bottom: 45px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: 35%;
+    margin-top: 320px;
+    width: 400px;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 14px;
+  text-align: center;
+  width: 100%;
+  .attribution {
+    color: $very_dark_violet;
+    a {
+      color: #6230d9;
+    }
+  }
+}

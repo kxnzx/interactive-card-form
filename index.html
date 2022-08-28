@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="stylesheet/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <!-- Main element is included for good practice & accessibility -->
+    <main>
+      <!-- CREDIT CARD -->
+      <div class="card_container">
+        <img
+          class="back_card"
+          src="images/bg-card-back.png"
+          alt="Illustrated back side of credit card"
+        />
+        <p id="cvcInscription" class="details cvc">000</p>
+        <div class="front_card_container">
+          <img
+            class="front_card"
+            src="images/bg-card-front.png"
+            alt="Illustrated front side of credit card"
+          />
+          <!-- &emsp; creates four spaces between words -->
+          <p id="cardnumberInscription" class="details cardnumber">
+            0000&emsp;0000&emsp;0000&emsp;0000
+          </p>
+          <p id="cardnameInscription" class="details cardname">
+            Jane Appleseed
+          </p>
+          <div id="expdateInscription" class="details expdate">
+            <p id="expmonthInscription">00<p>/</p><p id="expyearInscription">00</p></p>
+          </div>
+        </div>
+      </div>
+      <!-- FORM -->
+      <form id="form" class="cardform" novalidate > <!-- Novalidate prevents the form-data input from being validated when submitted -->
+        <!-- Included fieldset to be semantically correct -->
+        <fieldset>
+          <div class="box1">
+            <label for="cardname">Cardholder Name</label>
+            <input
+              id="cardname"
+              type="text"
+              name="cardname"
+              placeholder="e.g. Jane Appleseed"
+            />
+            <small class="errorMessage"></small>
+          </div>
+          <div class="box1">
+            <label for="cardnumber">Card Number</label>
+            <input
+              id="cardnumber"
+              type="tel"
+              name="cardnumber"
+              pattern="\d*"
+              maxlength="19"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <small class="errorMessage"></small>
+          </div>
+          <div class="box2">
+            <div class="box3">
+             
+              <label for="expmonth">Exp. Date</label>
+              <input
+                id="expmonth"
+                type="text"
+                name="expmonth"
+                placeholder="MM"
+                maxlength="2"
+              />
+              <small class="errorMessage"></small>
+            </div>
+            <div class="box3">
+              <label for="expyear">(MM/YY)</label>
+              <input id="expyear" type="text" name="expyear" placeholder="YY" maxlength="2"/>
+              <small class="errorMessage"></small>
+        
+            </div>
+            <div class="box3">
+              <label for="cvc">CVC</label>
+              <input id="cvc" type="text" name="cvc" maxlength="3" placeholder="e.g. 123" />
+              <small class="errorMessage"></small>
+            </div>
+          </div>
+          <!-- The default type for Button is submit and type Button is customizable -->
+          <button class="confirm_button" type="button" onclick="confirm();">Confirm</button>
+        </fieldset>
+      </form>
+      <!-- Thank You! -->
+      <div class="completionMessage hide ">
+        <img src="images/icon-complete.svg" alt="Complete Icon" />
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <!-- Since this button is not inside a form it will do nothing -->
+        <button class="continue_button" >Continue</button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://www.frontendmentor.io/profile/kxnzx" target="_blank"
+          >kxnzx</a
+        >.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
