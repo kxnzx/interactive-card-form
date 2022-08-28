@@ -101,8 +101,8 @@ main {
 .back_card {
   position: relative;
   @media screen and (min-width: $desktop) {
-    bottom: -125%;
-    left: 30%;
+    bottom: -124%;
+    left: 48%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
       rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
       rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -119,7 +119,7 @@ main {
     transform: scale(0.6);
     @media screen and (min-width: $desktop) {
       top: 20%;
-      left: 15%;
+      left: 35%;
       transform: scale(1);
     }
   }
@@ -134,7 +134,7 @@ main {
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
   @media screen and (min-width: $desktop) {
     top: 10%;
-    left: 40px;
+    left: 130px;
   }
 }
 
@@ -150,8 +150,8 @@ main {
   left: 225px;
   font-size: 10px;
   @media screen and (min-width: $desktop) {
-    top: 425px;
-    left: 495px;
+    top: 423px;
+    left: 577px;
     font-size: 13px;
   }
 }
@@ -160,11 +160,12 @@ main {
   top: 170px;
   left: -18px;
   font-size: $fs_bodyCopy;
-
   @media screen and (min-width: $desktop) {
     top: 150px;
-    left: 88px;
+    left: 130px;
     font-size: 30px;
+    width: 450px;
+    text-align: center;
   }
 }
 
@@ -174,7 +175,7 @@ main {
   text-transform: uppercase;
   font-size: 9px;
   @media screen and (min-width: $desktop) {
-    left: 92px;
+    left: 179px;
     font-size: 13px;
   }
 }
@@ -187,8 +188,9 @@ main {
     display: inline-block;
   }
   @media screen and (min-width: $desktop) {
-    left: 394px;
+    left: 487px;
     font-size: 13px;
+    width: 96px;
   }
 }
 // FORM

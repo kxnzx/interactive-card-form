@@ -82,8 +82,8 @@ main {
 }
 @media screen and (min-width: 1024px) {
   .back_card {
-    bottom: -125%;
-    left: 30%;
+    bottom: -124%;
+    left: 48%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
   }
 }
@@ -98,7 +98,7 @@ main {
 @media screen and (min-width: 1024px) {
   .front_card_container::after {
     top: 20%;
-    left: 15%;
+    left: 35%;
     transform: scale(1);
   }
 }
@@ -112,7 +112,7 @@ main {
 @media screen and (min-width: 1024px) {
   .front_card {
     top: 10%;
-    left: 40px;
+    left: 130px;
   }
 }
 
@@ -130,8 +130,8 @@ main {
 }
 @media screen and (min-width: 1024px) {
   .cvc {
-    top: 425px;
-    left: 495px;
+    top: 423px;
+    left: 577px;
     font-size: 13px;
   }
 }
@@ -144,8 +144,10 @@ main {
 @media screen and (min-width: 1024px) {
   .cardnumber {
     top: 150px;
-    left: 88px;
+    left: 130px;
     font-size: 30px;
+    width: 450px;
+    text-align: center;
   }
 }
 
@@ -157,7 +159,7 @@ main {
 }
 @media screen and (min-width: 1024px) {
   .cardname {
-    left: 92px;
+    left: 179px;
     font-size: 13px;
   }
 }
@@ -172,8 +174,9 @@ main {
 }
 @media screen and (min-width: 1024px) {
   .expdate {
-    left: 394px;
+    left: 487px;
     font-size: 13px;
+    width: 96px;
   }
 }
 
