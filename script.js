@@ -1,12 +1,12 @@
 // MIRROR THE TEXT ON THE CREDITCARD INSCRIPTIONS WHEN THE USER IS TYPING IN THE INPUT:
-// CARDNAME
+// Cardname
 const cardname = document.getElementById("cardname");
 const mirrorCardname = document.getElementById("cardnameInscription");
 
 cardname.addEventListener("input", function (event) {
   mirrorCardname.innerText = event.target.value.split("").join("");
 });
-// CARDNUMBER
+// Cardnumber
 const cardnumber = document.getElementById("cardnumber");
 const mirrorCardnumber = document.getElementById("cardnumberInscription");
 
@@ -20,21 +20,21 @@ document.getElementById("cardnumber").addEventListener("input", function (e) {
     .replace(/(.{4})/g, "$1 ")
     .trim();
 });
-// MONTH
+// Month
 const month = document.getElementById("expmonth");
 const mirrorMonth = document.getElementById("expmonthInscription");
 
 month.addEventListener("input", function (event) {
   mirrorMonth.innerText = event.target.value.split("").join("");
 });
-// YEAR
+// Year
 const year = document.getElementById("expyear");
 const mirrorYear = document.getElementById("expyearInscription");
 
 year.addEventListener("input", function (event) {
   mirrorYear.innerText = event.target.value.split("").join("");
 });
-// CVC
+// Cvc
 const cvc = document.getElementById("cvc");
 const mirrorCvc = document.getElementById("cvcInscription");
 
@@ -94,25 +94,28 @@ form.addEventListener("submit", (e) => {
     removeError("cvc");
   }
 });
-// Add Error Message
+
+// ERRORS
+// Add error message:
 function addError(field, message) {
   const formControl = form[field].parentNode;
   formControl.classList.add("error");
   const small = form[field].parentNode.querySelector("small");
   small.innerText = message;
 }
-// Remove Error Message
+// Remove error message:
 function removeError(field) {
   const formControl = form[field].parentNode;
   formControl.classList.remove("error");
 }
 
+// ERROR "WRONG FORMAT" CARDNUMBER:
 // REGEX = Regular Expression
 function isValid(cardnumber) {
   return /^[0-9]+$/.test(cardnumber);
 }
 
-// TOGGLE TO THANK YOU MESSAGE WHEN CONFIRM BUTTON IS CLICKED
+// TOGGLE TO THANK YOU MESSAGE WHEN CONFIRM BUTTON IS CLICKED:
 function confirm() {
   if (document.querySelector(".cardform").style.display === "none") {
     document.querySelector(".completionMessage").style.display = "none";
