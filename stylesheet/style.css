@@ -144,10 +144,9 @@ main {
 @media screen and (min-width: 1024px) {
   .cardnumber {
     top: 9.375rem;
-    left: 8.125rem;
+    left: 11.125rem;
     font-size: 1.875rem;
-    width: 28.125rem;
-    text-align: center;
+    width: 22.5rem;
   }
 }
 
