@@ -90,6 +90,8 @@ form.addEventListener("submit", (e) => {
   if (cardname === "") {
     addError("cardname", "Can't be blank");
     // When the input is valid, do this:
+  } else {
+    removeError('cardname')
   }
   // When the input is empty, do this:
   if (cardnumber === "") {
