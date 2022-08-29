@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - View my Solution on [Frontend Mentor]()
-- View the Live Site [here]()
+- View the Live Site [here](https://kxnzx.github.io/interactive-card-form/)
 
 ## My process
 
@@ -62,7 +62,20 @@ Users should be able to:
 
 ### What I learned
 
-I learned how to mirror the text of the input into the card.
+I succeeded in the following:
+
+- mirroring the text from the input into the creditcard inscription
+- display of error messages when input is empty
+- create space after every four characters with input for cardnumber
+- prevent button from submitting by default
+
+However, when I included the toggle function (to show the Thank You! Completion message after button has been clicked) the errors and the preventDefault() do not work anymore. How can I fix this?
+
+I also wonder what input type to use for the cardnumber, month, year and cvc in HTML?
+
+The REGEX that I used for the cardnumber does not function correctly either. How can I create the error when the wrong format has been entered?
+
+Any help is much appreciated!
 
 I tried the following to write the javascript shorter, but it did not work:
 
