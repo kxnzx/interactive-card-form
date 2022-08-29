@@ -94,8 +94,8 @@
               <small class="errorMessage"></small>
             </div>
           </div>
-          <!-- The default type for Button is submit and type Button is customizable -->
-          <button class="confirm_button" type="button" onclick="confirm();">Confirm</button>
+          <!--Removed onclick html is deprecated and causes bugs, added input type submit, because either the form won't submit with a html button-->
+          <input type="submit" class="confirm_button" value="Confirm" /> 
         </fieldset>
       </form>
       <!-- Thank You! -->
