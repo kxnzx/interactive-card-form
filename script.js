@@ -41,7 +41,7 @@ const mirrorCvc = document.getElementById("cvcInscription");
 cvc.addEventListener("input", function (event) {
   mirrorCvc.innerText = event.target.value.split("").join("");
 });
-// ERRORs <- calling them before using them
+// ERRORs <- CALL them Before Using Them
 // Add class error
 function addError(field, message) {
   const formControl = form[field].parentNode;
@@ -58,7 +58,9 @@ function removeError(field) {
 // REGEX = Regular Expression
 function isValid(cardnumber) {
   // Add the regex to a const also use a better regex for 12 number credit card
-  const cardRegex = new RegExp ("\\b[0-9]{4}\\s[0-9]{4}\\s[0-9]{4}\\s[0-9]{4}\\b");
+  const cardRegex = new RegExp(
+    "\\b[0-9]{4}\\s[0-9]{4}\\s[0-9]{4}\\s[0-9]{4}\\b"
+  );
   return cardRegex.test(cardnumber);
 }
 
@@ -91,7 +93,7 @@ form.addEventListener("submit", (e) => {
     addError("cardname", "Can't be blank");
     // When the input is valid, do this:
   } else {
-    removeError('cardname')
+    removeError("cardname");
   }
   // When the input is empty, do this:
   if (cardnumber === "") {
@@ -126,10 +128,7 @@ form.addEventListener("submit", (e) => {
     removeError("cvc");
   }
   // Dirty way of returning when error but works if there is no error class the form is valid and the confirm function executes
-  const isThereAnyError = document.querySelector('.error');
-  if(isThereAnyError) return;
+  const isThereAnyError = document.querySelector(".error");
+  if (isThereAnyError) return;
   confirm();
 });
-
-
-

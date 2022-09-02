@@ -34,11 +34,11 @@ Users should be able to:
 
 #### Screensize 375px - Mobile
 
-![Mobile](images/Mobile1.gif)
+![Mobile](images/Mobile.gif)
 
 ### Links
 
-- View my Solution on [Frontend Mentor]()
+- View my Solution on [Frontend Mentor](https://www.frontendmentor.io/solutions/interactive-card-form-with-vanilla-javascript-ZjsgI9xNlr)
 - View the Live Site [here](https://kxnzx.github.io/interactive-card-form/)
 
 ## My process
@@ -69,7 +69,7 @@ I succeeded in the following:
 - create space after every four characters with input for cardnumber
 - prevent button from submitting by default
 
-However, when I included the toggle function (to show the Thank You! Completion message after button has been clicked) the errors and the preventDefault() do not work anymore. How can I fix this?
+However, when I included the toggle function (to show the Thank You! Completion message after button has been clicked) the errors and the preventDefault() do not work anymore.
 
 I also wonder what input type to use for the cardnumber, month, year and cvc in HTML?
 
@@ -77,29 +77,40 @@ The REGEX that I used for the cardnumber does not function correctly either. How
 
 Any help is much appreciated!
 
-I tried the following to write the javascript shorter, but it did not work:
+Answer from @DavidMorgade on Frontend Mentor:
 
-```js
-// HOW TO ADD MULTIPLE ID'S TO VARIABLE
+The first thing that take me more time to figure out is why the form wasn't submitting, I was clicking the button adding console logs in your form and they weren't working, and then I noticed that the main problem wasn't in your JS files, was in your HTML.
 
-const main = document.querySelectorAll(
-  "#cardname, #cardnumber, #expmonth, #expyear, #cvc"
-);
+You were trying to submit the form using a html <button>, I just changed it to <input type='submit'> and now the form was submitting.
 
-const mirror = document.querySelectorAll(
-  "#cardnameInscription, #cardnumberInscription, #expmonthInscription, #expyearInscription, #cvcInscription"
-);
-
-// HOW TO ADD EVENTLISTNER TO MULTIPLE VARIABLES WITH CLASS
-
-[document.querySelector(".input"), document.querySelector(".details")].forEach(
-  (item) => {
-    item.addEventListener("input", function (event) {
-      mirror.innerText = event.target.value.split("").join("");
-    });
-  }
-);
+```html
+<!--Removed onclick html is deprecated and causes bugs, added input type submit, because either the form won't submit with a html button-->
+<input type="submit" class="confirm_button" value="Confirm" />
 ```
+
+The other main problem was that you were using an html function call onclick this is a really bad practice that can cause you a lot of problems (look how your form wasn't working correctly), you should use your confirm() function inside your form submission, not onclick because you want it to execute when your form is submitted, not when the button is clicked.
+
+Other major change that I did was adding your confirm() function to your form submit but only executing it when no error message was displayed, like this:
+
+const isThereAnyError = document.querySelector('.error');
+if(isThereAnyError) return;
+confirm();
+
+I was selecting errors, if there are no error classes around the isThereAnyError will be undefined wich means false wich causes your form to stop executing and return, if there were no error classes your form will keep going and will use the confirm() function.
+
+Moved all your validate functions to the top for readable reasons, you were using them before calling them.
+
+Added a better regex for 16 card numbers check.
+
+    Recomendations for future projects:
+
+Instead of using a lot of if else checkers, try selecting all the input at once and do the validation with a loop checking the type and adding the errors, this is a little bit harder than the solution you got, it will come with time don't worry.
+
+Use more modern syntax that will make your code much more readable, ternay operators, logical && or || operators, try making your code more dinamic!, no pressure on this, just practice and read a lof of documentation / watch more ES6+ content.
+
+    Still missing on your JS some things:
+
+Validate that the year and month are digits and not letters. Validate CVC is a digit of 3 numbers.
 
 ## Author
 
